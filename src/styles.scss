@@ -1,0 +1,31 @@
+
+@import "./style/theme";
+@import "./style/variables";
+
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow: hidden;}
+* {
+    transition: background-color 0.5s;
+}
+
+.mat-dialog-container{
+    border-radius: $--radius !important;
+}
+
+.dialog--red{
+    color: $--text-light !important;
+    background: $--red-gradient !important;
+}
+
+.dialog--yellow{
+    background: $--yellow-gradient !important;
+    color: $--text-dark !important;
+}
+
+.dialog--draw{
+    background: var(--background) !important;
+    color: var(--text) !important;
+}

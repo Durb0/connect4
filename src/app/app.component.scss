@@ -1,0 +1,31 @@
+@import "/src/style/variables";
+
+:host{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+
+    .playground{
+        display: grid;
+
+        .playground__score{
+            height: 200px;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+            font-size: 100px;
+            align-items: center;
+            align-content: center;
+        }
+        .playground__score--red{
+            color: $--red;
+        }
+
+        .playground__score--yellow{
+            color: $--yellow;
+        }
+    }
+}

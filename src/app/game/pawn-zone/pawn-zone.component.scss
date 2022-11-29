@@ -1,0 +1,40 @@
+@import "/src/style/variables";
+
+:host{
+    width: 100vw;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    
+}
+.active-pawn{
+    //we force a translate for when the pawn is in the middle of a move
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s, margin 0.5s, border-radius 0.5s, background-color 0.5s;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.active-pawn--move{
+    margin: auto;
+    width: 50px;
+    height: 50px;
+}
+
+.active-pawn--red{
+    background: $--red-gradient;
+}
+
+.active-pawn--yellow{
+    background: $--yellow-gradient;
+}
+
+.active-pawn--stop{
+    transition: transform 0.5s;
+    transform: translate3d(0, 0, 0) !important;
+}

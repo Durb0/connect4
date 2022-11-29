@@ -1,0 +1,9 @@
+
+/**
+* It is used to switch the theme
+*/
+@mixin spread-map($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}

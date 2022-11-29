@@ -1,0 +1,7 @@
+<mat-toolbar>
+    <span>C🔴NNECT 4</span>
+    <span class="spacer"></span>
+    <mat-slide-toggle (change)="changeTheme()" [(ngModel)]="isDarkMode" class="mr-8">
+    </mat-slide-toggle>
+    <mat-icon class="theme-icon">{{isDarkMode ? 'bedtime' : 'brightness_5'}}</mat-icon>
+</mat-toolbar>

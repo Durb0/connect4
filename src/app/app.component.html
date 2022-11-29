@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="playground">
+    <div class="playground__score">
+        <p *ngFor="let player of game.players" class="playground__score--{{player.name}}">{{player.score}}</p>
+    </div>
+    <app-grid></app-grid>
+</div>
+
+<app-pawn-zone></app-pawn-zone>

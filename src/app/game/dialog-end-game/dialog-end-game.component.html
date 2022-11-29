@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Game Over 🎉</h1>
+<div mat-dialog-content>
+    <p>{{text}}</p>
+</div>
+<div mat-dialog-actions class="buttons">
+    <button mat-button [mat-dialog-close]="true"><mat-icon>replay</mat-icon> Play Again </button>
+    <button mat-raised-button color="primary" onclick="location.href='mailto:thomasnou@orange.fr?subject=Retour sur votre exercice'" [mat-dialog-close]="false">Hire me !</button>
+</div>

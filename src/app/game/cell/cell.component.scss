@@ -1,0 +1,41 @@
+@import "src/style/variables";
+
+:host{
+    border-radius: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    transition: all .2s ease-in-out, border 0.5s, border-radius 0.5s, box-shadow 0.5s, background-color 0.5s;
+    display: flex;
+
+    .cell-border{
+        aspect-ratio: 1/1;
+        margin: auto;
+        border-radius:100%;
+        border: var(--border);
+        transition: background 0.5s, box-shadow 0.1s, width 0.2s, height 0.2s, border-radius 0.5s, border 0.5s;
+    }
+
+    .none{
+        width: 50%;
+        height: 50%;
+        background: var(--background);
+        box-shadow: inset 5px 5px 10px var(--background-dark),
+                inset -5px -5px 10px var(--background-light);
+    }
+
+    .full{
+        width: 70%;
+        height: 70%;
+        box-shadow: none;
+    }
+
+    .yellow{
+        @extend .full;
+        background: $--yellow-gradient;
+    }
+
+    .red{
+        @extend .full;
+        background: $--red-gradient;
+    }
+}

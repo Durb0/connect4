@@ -1,0 +1,9 @@
+
+<div class="grid__inner">
+    <div *ngFor="let col of game.grid;let colIndex = index" class="grid__column" (click)="choose(colIndex)">
+        <app-cell [cell]="game.grid[colIndex][rowIndex]" *ngFor="let row of col; let rowIndex = index" class="grid__cell"></app-cell>
+    </div>  
+</div>
+<div class="grid__finish">
+    <button mat-icon-button (click)="restart()" class="grid__finish-button"><mat-icon>replay</mat-icon></button>
+</div>

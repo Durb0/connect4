@@ -1,0 +1,49 @@
+@import "./palette";
+
+
+$--radius: 25px;
+$--grid-size: min(50vh, 80vw);
+
+
+//colors of the cells
+$--yellow: map-get($yellow, 500);
+$--yellow-light: map-get($yellow, 200);
+$--yellow-dark: map-get($yellow, $key: 700);
+$--yellow-gradient: radial-gradient(ellipse at 10% 10%, $--yellow-light 0%, $--yellow-dark 100%);
+$--red: map-get($red, 500);
+$--red-light: map-get($red, $key: 200);
+$--red-dark: map-get($red, 700);
+$--red-gradient: radial-gradient(ellipse at 10% 10%, $--red-light 0%, $--red-dark 100%);
+
+//this variables are used for the theme
+$--text-light: map-get($blue, 50);
+$--text-dark: map-get($blue, 900);
+
+
+//declaration of variables
+$--background: --background;
+$--background-light: --background-light;
+$--background-dark: --background-dark;
+$--text: --text;
+
+//default theme
+$theme-map-light:(
+    $--background: map-get($map:$blue,$key: 200),
+    $--background-light: map-get($blue, 100),
+    $--background-dark: map-get($blue, 300),
+    $--text: $--text-dark,
+);
+
+//it will override the default theme if the user choose the dark theme
+$theme-map-dark:(
+    $--background: map-get($map:$blue,$key: 500),
+    $--background-light: map-get($blue, 400),
+    $--background-dark: map-get($blue, 600),
+    $--text: $--text-light,
+);
+
+$map-winner:(
+    0: $--background,
+    1: $--yellow,
+    2: $--red
+);

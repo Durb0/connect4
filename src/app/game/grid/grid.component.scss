@@ -1,0 +1,87 @@
+//import theme variables
+@import "/src/style/variables";
+
+:host{
+    margin: auto;
+    width: $--grid-size;
+    height: $--grid-size;
+    box-shadow: calc($--grid-size / 10)    calc($--grid-size / 10)    calc($--grid-size / 5)  var(--background-dark),
+                calc($--grid-size / -10)   calc($--grid-size / -10)   calc($--grid-size / 5)  var(--background-light);
+    border-radius: $--radius;
+    background-color: var(--background);
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    .grid__inner{
+        position: absolute;
+        padding:25px;
+        display: grid;
+        height: inherit;
+        width: inherit;
+        grid-template-columns: repeat(7, 1fr);
+        box-sizing: border-box;
+        border: var(--border);
+        transition: box-shadow 0.5s, background-color 0.5s, border 0.5s, border-radius 0.5s;
+        justify-content: space-around;
+
+        .grid__column{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: $--radius;
+
+        }
+
+        .grid__column:hover, .grid__column--hover{
+            cursor: pointer;
+            background-color: var(--background-dark);
+
+            .grid__cell{
+                transform: scale(1.2);
+            }
+        }
+    }
+    .grid__finish{
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: $--radius;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .grid__finish-button{
+            width: 50%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: box-shadow 0.5s, background-color 0.5s, width 0.5s, height 0.5s, border 0.5s, border-radius 0.5s;
+            &:hover{
+                cursor: pointer;
+                animation: rotate 0.5s;
+            }
+            mat-icon{
+                line-height: initial;
+                width: 100px;
+                height: 100px;
+                font-size: 100px;
+                color: var(--background);
+            }
+        }
+    }
+
+    .grid__finish--hidden{
+        display: none;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+    
+}
+
+
